@@ -3,7 +3,7 @@
 <html class="menu-closed">
 
 <head>
-
+	<!-- PUSHED @ 4/13/15 -->
 	<meta charset="<?php bloginfo('charset'); ?>">
 	
 	<?php if (is_search()) { ?>

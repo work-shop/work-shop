@@ -196,16 +196,25 @@
 
 			<?php
 		
+			$total_current = count( array_filter( $people, function( $person ) { return $person['person_active']; }) );
+			$total_former = count( $people ) - $total_current;
+
 			$current = '<div class="current">';
 			$former = '<div class="former">';
 		
 			$current_i = 0;
 			$former_i = 0;
+
+			$row_separator_open = '<div class="row m3">';
+			$row_separator_close = '</div>';
 		
 			foreach ( $people as $i => $person ) {
 				if ( $person['person_active'] ) {
+
+					if ( $current_i % 2 == 0 ) $current .= $row_separator_open;
+
 					$current .= '<div class="'.ws_parity( $current_i, 'left-side', 'right-side')
-							 .  (($current_i==0) ? " col-sm-offset-2 " : " col-sm-offset-1")
+							 .  (($current_i % 2 == 0) ? " col-sm-offset-2 " : " col-sm-offset-1")
 							 .  ' col-sm-4 person">'
 							 .  ws_ifdef_concat('<a href="',ws_decide_link_type($person['person_link']),'" target="_blank">')
 						     .  '<img class="m1" src="'.$person['person_image']['sizes']['square'].'">'
@@ -216,10 +225,14 @@
 						     .  ws_ifdef_concat( '<p>',$person['people_bio'],'</p>')
 						     .  ws_ifdef_do($person['person_link'], '</a>')
 						     .  '</div>';
+
+					if ( $current_i % 2 == 1 || $current_i == $total_current - 1 ) $current .= $row_separator_close;
 		
 					$current_i++;
+
 				} else {
-				
+					
+					if ( $former_i % 2 == 0 ) $former .= $row_separator_open;
 				
 					$former .= '<div class="'.ws_parity( $former_i, 'left', 'right').'">'
 							 .  ws_ifdef_concat('<a href="',ws_decide_link_type( $person['person_link'] ),'" >')
@@ -233,6 +246,8 @@
 						     .  '</div>';
 		
 					$former_i++;
+
+					if ( $former_i % 2 == 1 || $former_i == $total_former - 1 ) $former .= $row_separator_close;
 		
 				}
 			}
@@ -247,7 +262,7 @@
 		</div>
 		
 			
-		<div class="row">
+		<div class="row hidden">
 			<div class="col-sm-9 col-sm-offset-2">
 				<h3 class=""><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
 			</div>

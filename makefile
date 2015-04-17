@@ -57,7 +57,7 @@ deploy-live:
 # deploy-liv
 # Push the current $(branch) to the live remote master
 deploy-dev:
-	git push $(GIT_REMOTE_DEV +$(branch):refs/heads/master
+	git push $(GIT_REMOTE_DEV) +$(branch):refs/heads/master
 
 # remotes
 # Add the specified remotes to the local repository

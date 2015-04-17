@@ -36,8 +36,9 @@ DB_UTILITIES = util/
 # some reasonable defaults.
 
 # $(branch), the branch to push to the remote repository
-branch = master 
+branch = master
 target = $(GIT_REMOTE_LIVE)
+upload = ./
 
 # running 'make' is the same as running 'make open' 
 # followed by 'make sass-watch'
@@ -106,9 +107,9 @@ push-db:
 # pass target=dev to pull to the remote staging environment
 pull-uploads:
 ifeq ($(target), $(GIT_REMOTE_LIVE))
-	scp -r $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_LIVE_ROOT)$(WP_CONTENT)$(WP_UPLOADS) ./
+	scp -r $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_LIVE_ROOT)$(WP_CONTENT)$(WP_UPLOADS)$(upload) ./$(upload)
 else
-	scp -r $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_DEV_ROOT)$(WP_CONTENT)$(WP_UPLOADS) ./
+	scp -r $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_DEV_ROOT)$(WP_CONTENT)$(WP_UPLOADS)$(upload) ./$(upload)
 endif
 
 # push-uploads
@@ -120,9 +121,9 @@ endif
 # pass target=dev to push from the remote staging environment
 push-uploads:
 ifeq ($(target), $(GIT_REMOTE_LIVE))
-	scp -r $(WP_UPLOADS)/* $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_LIVE_ROOT)$(WP_CONTENT)$(WP_UPLOADS) 
+	scp -r $(WP_UPLOADS)$(upload) $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_LIVE_ROOT)$(WP_CONTENT)$(WP_UPLOADS)$(upload) 
 else
-	scp -r $(WP_UPLOADS)/* $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_DEV_ROOT)$(WP_CONTENT)$(WP_UPLOADS)
+	scp -r $(WP_UPLOADS)$(upload) $(SSH_USER)@$(SSH_HOST):$(WP_REMOTE_DEV_ROOT)$(WP_CONTENT)$(WP_UPLOADS)
 endif
 
 

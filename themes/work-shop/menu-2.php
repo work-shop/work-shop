@@ -1,6 +1,6 @@
 	
 	<nav id="menu" class="off">
-	
+		<!-- MENU 2 -->
 		<div class="container">
 	
 			<div class="row mt">
@@ -8,7 +8,7 @@
 					<ul class="">
 						<li><a href="<?php bloginfo('url'); ?>/about" class=" h2 bold">About</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/about#contact" class=" h2 bold">Contact</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/jobs" class=" h2 bold">Jobs</a></li>
+						<li class="hidden"><a href="<?php bloginfo('url'); ?>/jobs" class=" h2 bold">Jobs</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/projects" class=" h2 bold">Projects</a></li>
 						<li class="hidden"><a href="<?php bloginfo('url'); ?>/apprenticeship" class="h2 bold">Summer Apprenticeship Program</a></li>
 					</ul>
@@ -29,7 +29,7 @@
 					<ul class="">
 						<li><a href="<?php bloginfo('url'); ?>/about" class=" h2 bold">About</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/about#contact" class=" h2 bold">Contact</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/jobs" class=" h2 bold">Jobs</a></li>
+						<li class="hidden"><a href="<?php bloginfo('url'); ?>/jobs" class=" h2 bold">Jobs</a></li>
 						<li class="hidden"><a href="<?php bloginfo('url'); ?>/apprenticeship" class="h2 bold">Summer Apprenticeship Program</a></li>
 					</ul>
 					<address>	

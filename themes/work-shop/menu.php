@@ -11,7 +11,7 @@
 					<ul class="centered">
 						<li><a href="<?php bloginfo('url') ;?>/about" class=" h3 uppercase bold">About</a></li>
 						<li><a href="<?php bloginfo('url') ;?>/about#contact" class=" h3 uppercase bold">Contact</a></li>
-						<li><a href="<?php bloginfo('url') ;?>/jobs" class=" h3 uppercase bold">Jobs</a></li>
+						<li class=""><a href="<?php bloginfo('url') ;?>/jobs" class=" h3 uppercase bold hidden">Jobs</a></li>
 						<li><a href="#" class=" h2 uppercase bold hidden">Summer Apprenticeship Program</a></li>
 					</ul>
 				</div>

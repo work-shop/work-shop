@@ -16,7 +16,7 @@
 				spaces, furniture, objects<br/>
 				websites, and apps.
 			</h1>
-			<div class="row">
+			<div class="row hidden">
 				<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 slide-right">
 					<a href="<?php bloginfo('url');?>/apprenticeship" class="button bold centered margin uppercase">2015 Summer Apprenticeship Program</a>
 				</div>				
@@ -38,7 +38,7 @@
 				research, design, and fabrication<br class="visible-xs"/> studio<br class="hidden-xs"/>
 				in Providence,<br class="visible-xs"/> Rhode Island.<br/></h2>
 				
-				<h3 class="centered m30"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
+				<h3 class="centered m30 hidden"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
 			
 			</div>
 			

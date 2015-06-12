@@ -38,7 +38,7 @@
 						<h3 class="bold uppercase m30 brand">Work-Shop</h3>				
 						<h4><a href="<?php bloginfo('url'); ?>/projects" target="_blank" class="dark">Projects</a></h4>	
 						<h4><a href="<?php bloginfo('url'); ?>/about" target="_blank" class="dark">About</a></h4>				
-						<h4><a href="<?php bloginfo('url'); ?>/jobs" target="_blank" class="dark">Jobs</a></h4>				
+						<h4 class="hidden"><a href="<?php bloginfo('url'); ?>/jobs" target="_blank" class="dark">Jobs</a></h4>				
 						<h4><a href="<?php bloginfo('url'); ?>/current" target="_blank" class="dark">Current</a></h4>													
 					</address>	
 				</div>
